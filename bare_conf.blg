@@ -1,0 +1,63 @@
+This is BibTeX, Version 0.99d (TeX Live 2012/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: bare_conf.aux
+The style file: IEEEtran.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Database file #1: IEEEabrv.bib
+Database file #2: IDEAL.bib
+A bad cross reference---entry "xsongx:b37"
+refers to entry "conf/eacl/2012", which doesn't exist
+Warning--I didn't find a database entry for "conf/eacl/2012"
+-- IEEEtran.bst version 1.12 (2007/01/11) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+Warning--empty journal in xsongx:b19
+Warning--empty year in xsongx:b36
+
+Done.
+You've used 21 entries,
+            4024 wiz_defined-function locations,
+            1339 strings with 19779 characters,
+and the built_in function-call counts, 18038 in all, are:
+= -- 1457
+> -- 408
+< -- 148
++ -- 225
+- -- 66
+* -- 936
+:= -- 2721
+add.period$ -- 53
+call.type$ -- 21
+change.case$ -- 25
+chr.to.int$ -- 372
+cite$ -- 23
+duplicate$ -- 1244
+empty$ -- 1483
+format.name$ -- 86
+if$ -- 4143
+int.to.chr$ -- 0
+int.to.str$ -- 21
+missing$ -- 225
+newline$ -- 118
+num.names$ -- 25
+pop$ -- 522
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 2
+skip$ -- 1360
+stack$ -- 0
+substring$ -- 887
+swap$ -- 1040
+text.length$ -- 24
+text.prefix$ -- 0
+top$ -- 5
+type$ -- 21
+warning$ -- 2
+while$ -- 80
+width$ -- 23
+write$ -- 271
+(There was 1 error message)

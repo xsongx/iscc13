@@ -1,0 +1,919 @@
+
+%% bare_conf.tex
+%% V1.3
+%% 2007/01/11
+%% by Michael Shell
+%% See:
+%% http://www.michaelshell.org/
+%% for current contact information.
+%%
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.7 or later) with an IEEE conference paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/tex-archive/macros/latex/contrib/IEEEtran/
+%% and
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE! 
+%% User assumes all risk.
+%% In no event shall IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%
+%% File list of work: IEEEtran.cls, IEEEtran_HOWTO.pdf, bare_adv.tex,
+%%                    bare_conf.tex, bare_jrnl.tex, bare_jrnl_compsoc.tex
+%%*************************************************************************
+
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work. IEEE's font choices can trigger bugs that do  ***
+% *** not appear when using other class files.                            ***
+% The testflow support page is at:
+% http://www.michaelshell.org/tex/testflow/
+
+
+
+% Note that the a4paper option is mainly intended so that authors in
+% countries using A4 can easily print to A4 and see how their papers will
+% look in print - the typesetting of the document will not typically be
+% affected with changes in paper size (but the bottom and side margins will).
+% Use the testflow package mentioned above to verify correct handling of
+% both paper sizes by the user's LaTeX system.
+%
+% Also note that the "draftcls" or "draftclsnofoot", not "draft", option
+% should be used if it is desired that the figures are to be displayed in
+% draft mode.
+%
+%\documentclass[conference,compsoc]{IEEEtran}
+% Add the compsoc option for Computer Society conferences.
+%
+% If IEEEtran.cls has not been installed into the LaTeX system files,
+% manually specify the path to it like:
+\documentclass[conference]{/media/work/gitbase/iscc13/IEEEtran}
+
+%,compsoc][compsoc]
+
+
+
+% Some very useful LaTeX packages include:
+% (uncomment the ones you want to load)
+
+
+% *** MISC UTILITY PACKAGES ***
+%
+%\usepackage{ifpdf}
+% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
+% compilation based on whether the output is pdf or dvi.
+% usage:
+% \ifpdf
+%   % pdf code
+% \else
+%   % dvi code
+% \fi
+% The latest version of ifpdf.sty can be obtained from:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/oberdiek/
+% Also, note that IEEEtran.cls V1.7 and later provides a builtin
+% \ifCLASSINFOpdf conditional that works the same way.
+% When switching from latex to pdflatex and vice-versa, the compiler may
+% have to be run twice to clear warning/error messages.
+
+
+
+
+
+
+% *** CITATION PACKAGES ***
+%
+\usepackage{cite}
+% cite.sty was written by Donald Arseneau
+% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
+% \cite{} output to follow that of IEEE. Loading the cite package will
+% result in citation numbers being automatically sorted and properly
+% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
+% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
+% \cite will automatically add leading space, if needed. Use cite.sty's
+% noadjust option (cite.sty V3.8 and later) if you want to turn this off.
+% cite.sty is already installed on most LaTeX systems. Be sure and use
+% version 4.0 (2003-05-27) and later if using hyperref.sty. cite.sty does
+% not currently provide for hyperlinked citations.
+% The latest version can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/cite/
+% The documentation is contained in the cite.sty file itself.
+
+
+
+
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+  \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation can
+% be obtained at: 
+% http://www.ctan.org/tex-archive/macros/latex/required/graphics/
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found as epslatex.ps or
+% epslatex.pdf at: http://www.ctan.org/tex-archive/info/
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+
+
+% *** MATH PACKAGES ***
+%
+\usepackage[cmex10]{amsmath}
+\usepackage{amssymb}
+% A popular package from the American Mathematical Society that provides
+% many useful and powerful commands for dealing with mathematics. If using
+% it, be sure to load this package with the cmex10 option to ensure that
+% only type 1 fonts will utilized at all point sizes. Without this option,
+% it is possible that some math symbols, particularly those within
+% footnotes, will be rendered in bitmap form which will result in a
+% document that can not be IEEE Xplore compliant!
+%
+% Also, note that the amsmath package sets \interdisplaylinepenalty to 10000
+% thus preventing page breaks from occurring within multiline equations. Use:
+%\interdisplaylinepenalty=2500
+% after loading amsmath to restore such page breaks as IEEEtran.cls normally
+% does. amsmath.sty is already installed on most LaTeX systems. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/amslatex/math/
+
+
+
+
+
+% *** SPECIALIZED LIST PACKAGES ***
+%
+%\usepackage{algorithmic}
+% algorithmic.sty was written by Peter Williams and Rogerio Brito.
+% This package provides an algorithmic environment fo describing algorithms.
+% You can use the algorithmic environment in-text or within a figure
+% environment to provide for a floating algorithm. Do NOT use the algorithm
+% floating environment provided by algorithm.sty (by the same authors) or
+% algorithm2e.sty (by Christophe Fiorio) as IEEE does not use dedicated
+% algorithm float types and packages that provide these will not provide
+% correct IEEE style captions. The latest version and documentation of
+% algorithmic.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithms/
+% There is also a support site at:
+% http://algorithms.berlios.de/index.html
+% Also of interest may be the (relatively newer and more customizable)
+% algorithmicx.sty package by Szasz Janos:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithmicx/
+
+
+
+
+% *** ALIGNMENT PACKAGES ***
+%
+\usepackage{array}
+% Frank Mittelbach's and David Carlisle's array.sty patches and improves
+% the standard LaTeX2e array and tabular environments to provide better
+% appearance and additional user controls. As the default LaTeX2e table
+% generation code is lacking to the point of almost being broken with
+% respect to the quality of the end results, all users are strongly
+% advised to use an enhanced (at the very least that provided by array.sty)
+% set of table tools. array.sty is already installed on most systems. The
+% latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/tools/
+
+
+\usepackage{mdwmath}
+%\usepackage{mdwtab}
+% Also highly recommended is Mark Wooding's extremely powerful MDW tools,
+% especially mdwmath.sty and mdwtab.sty which are used to format equations
+% and tables, respectively. The MDWtools set is already installed on most
+% LaTeX systems. The lastest version and documentation is available at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/mdwtools/
+
+
+% IEEEtran contains the IEEEeqnarray family of commands that can be used to
+% generate multiline equations as well as matrices, tables, etc., of high
+% quality.
+
+
+%\usepackage{eqparbox}
+% Also of notable interest is Scott Pakin's eqparbox package for creating
+% (automatically sized) equal width boxes - aka "natural width parboxes".
+% Available at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/eqparbox/
+
+
+
+
+
+% *** SUBFIGURE PACKAGES ***
+%\usepackage[tight,footnotesize]{subfigure}
+% subfigure.sty was written by Steven Douglas Cochran. This package makes it
+% easy to put subfigures in your figures. e.g., "Figure 1a and 1b". For IEEE
+% work, it is a good idea to load it with the tight package option to reduce
+% the amount of white space around the subfigures. subfigure.sty is already
+% installed on most LaTeX systems. The latest version and documentation can
+% be obtained at:
+% http://www.ctan.org/tex-archive/obsolete/macros/latex/contrib/subfigure/
+% subfigure.sty has been superceeded by subfig.sty.
+
+
+
+%\usepackage[caption=false]{caption}
+%\usepackage[font=footnotesize]{subfig}
+% subfig.sty, also written by Steven Douglas Cochran, is the modern
+% replacement for subfigure.sty. However, subfig.sty requires and
+% automatically loads Axel Sommerfeldt's caption.sty which will override
+% IEEEtran.cls handling of captions and this will result in nonIEEE style
+% figure/table captions. To prevent this problem, be sure and preload
+% caption.sty with its "caption=false" package option. This is will preserve
+% IEEEtran.cls handing of captions. Version 1.3 (2005/06/28) and later 
+% (recommended due to many improvements over 1.2) of subfig.sty supports
+% the caption=false option directly:
+%\usepackage[caption=false,font=footnotesize]{subfig}
+%
+% The latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/subfig/
+% The latest version and documentation of caption.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/caption/
+
+
+
+
+% *** FLOAT PACKAGES ***
+%
+%\usepackage{fixltx2e}
+% fixltx2e, the successor to the earlier fix2col.sty, was written by
+% Frank Mittelbach and David Carlisle. This package corrects a few problems
+% in the LaTeX2e kernel, the most notable of which is that in current
+% LaTeX2e releases, the ordering of single and double column floats is not
+% guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a
+% single column figure to be placed prior to an earlier double column
+% figure. The latest version and documentation can be found at:
+% http://www.ctan.org/tex-archive/macros/latex/base/
+
+
+
+%\usepackage{stfloats}
+% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
+% the ability to do double column floats at the bottom of the page as well
+% as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
+% LaTeX2e). It also provides a command:
+%\fnbelowfloat
+% to enable the placement of footnotes below bottom floats (the standard
+% LaTeX2e kernel puts them above bottom floats). This is an invasive package
+% which rewrites many portions of the LaTeX2e float routines. It may not work
+% with other packages that modify the LaTeX2e float routines. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/sttools/
+% Documentation is contained in the stfloats.sty comments as well as in the
+% presfull.pdf file. Do not use the stfloats baselinefloat ability as IEEE
+% does not allow \baselineskip to stretch. Authors submitting work to the
+% IEEE should note that IEEE rarely uses double column equations and
+% that authors should try to avoid such use. Do not be tempted to use the
+% cuted.sty or midfloat.sty packages (also by Sigitas Tolusis) as IEEE does
+% not format its papers in such ways.
+
+
+
+
+
+% *** PDF, URL AND HYPERLINK PACKAGES ***
+%
+\usepackage{url}
+% url.sty was written by Donald Arseneau. It provides better support for
+% handling and breaking URLs. url.sty is already installed on most LaTeX
+% systems. The latest version can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/misc/
+% Read the url.sty source comments for usage information. Basically,
+% \url{my_url_here}.
+
+
+
+
+
+% *** Do not adjust lengths that control margins, column widths, etc. ***
+% *** Do not use packages that alter fonts (such as pslatex).         ***
+% There should be no need to do such things with IEEEtran.cls V1.6 and later.
+% (Unless specifically asked to do so by the journal or conference you plan
+% to submit to, of course. )
+
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+
+\begin{document}
+%
+% paper title
+% can use linebreaks \\ within to get better formatting as desired
+\title{Dividing for Combination: A Bootstrapping Sentiment Classification  Framework for Microblogs}
+
+
+% author names and affiliations
+% use a multiple column layout for up to three different
+% affiliations
+\author{\IEEEauthorblockN{Songxian Xie}
+\IEEEauthorblockA{School of Computer\\
+National University of Defence Technology\\
+Changsha, China, 410073\\
+Email: xsongx@nudt.edu.cn}
+\and
+\IEEEauthorblockN{Ting Wang}
+\IEEEauthorblockA{School of Computer\\
+National University of Defence Technology\\
+Changsha, China, 410073\\
+Email: tingwang@nudt.edu.cn}
+}
+
+% conference papers do not typically use \thanks and this command
+% is locked out in conference mode. If really needed, such as for
+% the acknowledgment of grants, issue a \IEEEoverridecommandlockouts
+% after \documentclass
+
+% for over three affiliations, or if they all won't fit within the width
+% of the page, use this alternative format:
+% 
+%\author{\IEEEauthorblockN{Michael Shell\IEEEauthorrefmark{1},
+%Homer Simpson\IEEEauthorrefmark{2},
+%James Kirk\IEEEauthorrefmark{3}, 
+%Montgomery Scott\IEEEauthorrefmark{3} and
+%Eldon Tyrell\IEEEauthorrefmark{4}}
+%\IEEEauthorblockA{\IEEEauthorrefmark{1}School of Electrical and Computer Engineering\\
+%Georgia Institute of Technology,
+%Atlanta, Georgia 30332--0250\\ Email: see http://www.michaelshell.org/contact.html}
+%\IEEEauthorblockA{\IEEEauthorrefmark{2}Twentieth Century Fox, Springfield, USA\\
+%Email: homer@thesimpsons.com}
+%\IEEEauthorblockA{\IEEEauthorrefmark{3}Starfleet Academy, San Francisco, California 96678-2391\\
+%Telephone: (800) 555--1212, Fax: (888) 555--1212}
+%\IEEEauthorblockA{\IEEEauthorrefmark{4}Tyrell Inc., 123 Replicant Street, Los Angeles, California 90210--4321}}
+
+
+
+
+% use for special paper notices
+%\IEEEspecialpapernotice{(Invited Paper)}
+
+
+
+
+% make the title area
+\maketitle
+
+
+\begin{abstract}
+%\boldmath
+Sentiment classification is an important area of Natural Language Processing.
+There are many challenges especially for sentiment classification of the social media such as microblogs. 
+This paper focuses on context dependence, which has been the most challenging problem, and proposes a novel framework to solve the problem.
+By dividing the feature space of sentiment classification into two parts, a general classifier on general part of features is trained on off-the-shelf idiom resources, and a context classifier on context-dependent part of features is trained on random tweets retrieved from microblogs in distant supervision manner. 
+Then a semi-supervised framework is developed to combine the general classifier and context classifier into a bootstrapping classifier. 
+Experiments results show that both the general classifier and context classifier outperform baselines, the proposed semi-supervised framework is effective and achieves encouraging performance by outperforming supervised classifier upper bound.
+\end{abstract}
+% IEEEtran.cls defaults to using nonbold math in the Abstract.
+% This preserves the distinction between vectors and scalars. However,
+% if the conference you are submitting to favors bold math in the abstract,
+% then you can use LaTeX's standard command \boldmath at the very start
+% of the abstract to achieve this. Many IEEE journals/conferences frown on
+% math in the abstract anyway.
+
+% no keywords
+\begin{IEEEkeywords}
+sentiment classification, idioms, general classifier, context classifier, microblogs.
+\end{IEEEkeywords}
+
+
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+\IEEEpeerreviewmaketitle
+\section{Introduction}
+\label{intro}
+
+Sentiment analysis is the computational study of how opinions, attitudes, emotions, and perspectives are expressed in language. 
+It can provide tools and techniques for extracting subjective information from large datasets and summarizing it for successive application such as Business Intelligence, Public Opinion Analysis, and Election Prediction, etc. \cite{xsongx:b1} 
+Sentiment classification, which deals with determining sentiment orientation of target text, is the classification form of sentiment analysis \cite{xsongx:b2}. 
+Although it can be viewed as a special text categorization problem, in fact sentiment classification is a more challenging task than text classification, because sentiment expressions critically depend on domains and context \cite{xsongx:b6}.
+
+With the emergence and prosperity of microblogs, the amount of user-generated content(UGC) has risen exponentially over the last decade, and such content is now always at our fingertips.
+It has been well recognized that UGC of microblogs with rich sentiment information can trigger more attention, feedback or participation, and sentiment analysis researchers have begun to pay more and more attention to microblogs \cite{DBLP:conf/hicss/StieglitzD12}.
+The distillation of subjective knowledge from such abundant language resources becomes an important part of applications in fields such as commerce, tourism, politics and health. 
+But as a freely-publishing platform, users may use or create new words of abbreviations and acronyms that seldom appear in conventional text documents, for example, words like "coooooool", “OMG",":-(", are intuitive and popular in tweets.
+Although they may provide convenience for on-line communications of users, it is difficult for computer to accurately identify the semantic meanings of these words. 
+To make situation worse, new words may arise and old words may change their meaning continuously in tweets.
+The noisy quantity, informal nature and explosive vocabulary make sentiment classification of tweets a very difficult and challenging task. 
+The sentiment in tweets often depends on such particular expressions as emoticons, repeated letters and exclamation, etc., which resolve their semantic meanings only in the context of microblogs. 
+Context dependence has been the main challenge sentiment classification of tweets must face.
+In this work, we have focused on the context-dependent problem of sentiment classification on microblogs. 
+
+For the problem, we propose a novel semi-supervised framework based on our two rational hypotheses.
+Firstly the problem is formulated as feature vector space model of text classification. 
+And the feature space is divided into two parts consisted of general part and context part.   
+Then a general classifier is trained on off-the-shelf labelled idiom resources by making use of general part of features, and a context classifier is trained on tweets randomly retrieved from microblogs in distant supervision manner by making use of context-dependent part of features. 
+As a result, a semi-supervised framework is developed to combine the general classifier and context classifier into a bootstrapping classifier to harmonize with the two parts of features. 
+
+The rest of the paper is organized as follows: Related works are discussed in Section~\ref{related}. The problem is formulated in Section~\ref{problem}, and our framework of semi-supervised sentiment classification is described in Section~\ref{framework}. The results and discussions of the experiment are presented in Section~\ref{experiment}. Finally we conclude about our work in Section~\ref{conclusion}.
+
+\section{Related Works}
+\label{related}
+
+Sentiment analysis has been a popular research area for years. 
+Previous efforts mainly focuses on reviews and news comments. 
+Generally, in terms of methodology, rule-based approaches and machine-learning based approaches are two major popular methods, and the machine-learning based approaches usually act as an upper bound for other methods to compare with because of the strong generalization ability of classifiers \cite{xsongx:b1,xsongx:b4}. 
+
+Recently, sentiment analysis researchers have begun to pay more and more attention to the massive user-generated content of social networks such as Twitter\footnote{\url{twitter.com}}. 
+Many studies showed that the unique characteristics of Twitter can be incorporated into sentiment analysis techniques.
+Barbosa and Feng~\cite{Barbosa:2010RSD} first investigated to use a two-stage Support Vector Machine (SVM) classifier for tweets sentiment classification which proved to be robust regarding biased and noisy data. 
+Hu et al.~\cite{Hu:2013www} interpreted emotional signals available in social media data for unsupervised sentiment analysis by providing a unified way to model two main categories of emotional signals: emotion indication and emotion correlation. 
+Jiang et al.~\cite{xsongx:b6} focused on target-dependent Twitter sentiment classification, they proposed to improve target-dependent Twitter sentiment classification by taking both target-dependent features and related tweets into consideration. 
+Wang et al.~\cite{Wang:2011TSA} focused their study on hashtag-level sentiment classification, they proposed a novel graph model and further improved the model using an enhanced boosting classification setting. 
+Amir Asiaee T et al.~\cite{AsiaeeT:2012} presented a cascaded classifier framework for per-tweet sentiment analysis by extracting tweets about a desired target subject, separating tweets with sentiment, and  setting apart positive from negative tweets.
+Hu et al.~\cite{Hu:2013ESR} extracted sentiment relations between tweets based on social theories, and proposed a novel sociological approach to utilize sentiment relations between messages to facilitate sentiment classification and effectively handle noisy Twitter data.
+Motivated by sociological theories arguing that humans tend to have consistently biased opinions, Guerra et al.~\cite{CalaisGuerra:2011BOT} addressed challenges of topic-based real-time sentiment analysis by proposing a novel transfer learning approach with a suitable source task of opinion holder bias prediction.
+Thelwall et al.~\cite{Thelwall:2010SSS,Thelwall:2012SSD} designed SentiStrength, an algorithm for extracting sentiment strength from informal English text. The algorithm built on human-evaluated dictionaries for words connotated with positive or negative sentiments and exploited the grammar and spelling styles in typical microblogs.
+
+All works above have tried to adapted their methods to microblogs by making use of the network and language characteristics, no matter what approaches they have taken. However, in this paper, we solve the context-dependent problem from a novel perspective by separating context-independent part of features from context-dependent part of features in the feature space of sentiment classification.
+
+\section{Problem Formulation and Hypotheses}
+\label{problem}
+
+\subsection{Problem Formulation}
+\label{formulation}
+
+Simply speaking, sentiment classification aims to classify text as predefined sentiment polarity classes (negative or positive).  
+Formally, Given document corpus $ D=\lbrace d_{1},\dots ,d_{n} \rbrace$ , and predefined sentiment classes $ C=\lbrace 1,-1\mid \mathrm{positive}=1,\mathrm{negative}=-1 \rbrace$ , the task of sentiment classification is to predict each $ d_{i} $ with a label $ c_{i} $. 
+To be along with text categorization, each document can be represented as a vector of features $ x=R^{n} $, where $ n $ is the size of a pre-specified feature volume $ V $. 
+For sentiment classification, the weight of each entry in the vector usually is often specified as binary, with weight equals to 1 for feature present in the vector and 0 for absent. 
+Given a training dataset $ X=\lbrace x_{1},\dots,x_{m} \rbrace $, a classifier can be build:
+\begin{equation}
+\label{e1}
+  f:X \longrightarrow Y, Y=\lbrace 1,-1 \rbrace \enspace .
+\end{equation} 
+and it is employed  to predict label for an unseen instance $ x $ by computing $ f \left( x \right)   $, with each instance represent as a vector $ x=\left( w_{1},\dots,w_{v} \right)  $, in which $ w_{i} $ is the $ i $th feature’s weight. 
+
+\subsection{Feature Space Division}
+\label{division}
+
+In previous sentiment classification researches, there is an underlying hypothesis, which implies all features in the text vector represent the document's sentiment polarity equally. 
+In fact, some features may only appear in specific context, while others appear across any context. 
+As an example, an English tweet is listed as following:
+
+\textit{@Kid\_Cloudz: Happy birthday to Yessicaaaa! :D lovee you feggit wish you the best day everrrrr!!!!! @030268.}
+
+If simple ``bag-of-words'' features are considered, all words would be extracted as equal features to model the sentiment when computationally classifying sentiment polarity of this tweet. 
+However with thorough considerations, we can find that such words as "@Kid\_Cloudz, :D, lovee, everrrrr,!!!!!" are mainly used in the  language context of microblogs, while "Happy, birthday, wish, best, thanks" are sentiment indicators of text almost in any language context. 
+With such intuition, we proposed a feature space division hypothesis as:
+\newtheorem{hypothesis}{Hypothesis}{\bfseries}{\rmfamily}
+\begin{hypothesis}
+\label{h1}
+In the feature space of sentiment classification, features can be divided into two different parts:
+\begin{itemize}
+\item context-independent part, i.e. general features, which are indicators of sentiment independent of any language context;
+\item context-dependent part, i.e. context features, which indicate sentiment in specific language context.
+\end{itemize}
+\end{hypothesis}
+Formally, for the text feature vector of a tweet $ x=\left(  w_{1},\dots,w_{l},w_{l+1},\dots,w_{v} \right) $, it could be divided into two parts:
+\begin{equation}
+\label{e2}
+x=\left\{
+\begin{array}{rcl}
+x_{g}     & \qquad        &:\mbox{general features}\\
+x_{c}     &  \qquad       &:\mbox{context features}
+\end{array}
+\right. \enspace .
+\end{equation}
+where $ x_{g}= \left( w_{1},\dots,w_{l}\right) $ denotes the general part of feature space, while $ x_{c}= \left( w_{l+1},\dots,w_{v}\right) $ denotes the context dependent part.
+
+\section{Sentiment Classification Framework}
+\label{framework}
+
+Besides traditional expressions, some languages of microblogs are often considered ``Mars Language'' because of their obscurity.  
+However users could still distinguish the sentiment polarity of the tweet even if some words seem strange to them.
+Intuitively, this kind of phenomenon may be explained by the general part of the tweet which is used to express the holistic sentiment polarity across any context, and the polarity of general sentiment words are prone to be recognized by anyone independent of context knowledge. 
+Comparably, for sentiment classification, we put forward that, the sentiment polarity of a document could sometimes still be recognized with only general part of feature space ($ x_{g} $ in Equation~\ref{e2}). 
+That is to say, if general sentiment knowledge could be modeled, what sentimental polarity a tweet prefers for could still be classified based on such general sentiment models. 
+
+In fact, many researchers have tried to establish all kinds of sentimental ontology lexicons to represent general knowledge of human’s sentiment, such as SentiWordNet \cite{xsongx:b17} and General Inquiry \cite{xsongx:b18} in English, HowNet\footnote{\url{http://www.keenage.com}} \cite{xsongx:b19} and NTUSD \cite{xsongx:b20} in Chinese, etc. 
+However, some entries of these lexical resources have multiple senses with different sense representing different sentimental polarity, and the exact sentiment of each sense unavoidably depends on the context.
+It seems a rather difficult task to find a general resources to model the context independent knowledge.
+Actually such knowledge exists in many situations, and many regular language expressions in the form of one general phrase or combination of a few words could identify exact sentimental polarity independent of language context, such as idioms and proverbs. 
+
+\subsection{General Sentiment Classifier}
+\label{general}
+
+There are many linguistic resources highly valuable for sentiment classification, of which idiom resources attract interests of this research. 
+Idioms are common phenomena of many languages beside Chinese, such as ``castles in the air'', ``a bed of thorns'', and ``bring down the house'' in English.
+As is convinced, the sentimental polarity of idioms is independent and unchangeable under any context. 
+There are many off-the-shelf idiom lexicons in all kinds of languages with entries taking the example form as:
+
+\textit{castles in the air: a derogatory term, indicate the illusive things or impractical fanciness metaphorically.}
+
+In this example, the entry is composed of three parts: the idiom ``castles in the air'', the semantic orientation ``a derogatory term'' representing negative
+sentimental polarity and a short paraphrase with three general negative words (``illusive, impractical and fanciness''). 
+The example provides us with a labelled sentimental instance with general sentiment features and a negative label.
+Most importantly, the sentimental polarity of such instance is independent of any context just as the idiom it explains. 
+Based on such observation, another hypothesis is proposed as follows:
+\begin{hypothesis}
+\label{h2}
+The sentimental polarity of the idiom paraphrase is independent of language context just as the idiom it describes.
+\end{hypothesis}
+With Hypothesis~\ref{h2} admitted, we could constructed a training dataset with the features extracted from paraphrases of idioms as general feature vector, the sentimental polarity of idioms as sentimental labels. 
+Then a context-independent classifier could be trained to model the general sentiment knowledge.
+
+\subsection{Context Sentiment Classifier}
+\label{context}
+
+As the general sentiment features are only one part of all features in the whole feature space, the other context-dependent part of features should be considered in order to capture the subtle clues embedded in the specific sentiment expressions in language context of microblogs.
+
+To model the context-dependent part of tweets, there are two questions must be solved. 
+The first is to identify the context-dependent part of features extracted from tweets. 
+In fact, new expressions appears on microblogs with the explosively increasing of UGC, which makes it rather difficult to clearly tell whether each word is context dependent or not. 
+However tweets are conventionally short with the limitation of 140 characters, and users often express one particular sentiment in one tweet with a few words. 
+Based on the particular characteristics of tweets, we make an assumption that if a tweet contains idioms,  sentimental polarity of words in a tweet are often context-dependent except for the idioms. 
+The second is how to find labelled instances to train the context-dependent classifier. 
+Some researchers have proposed distant supervision to solve the training data shortage of Twitter \cite{xsongx:b36,xsongx:b37}. 
+In this paper we establish our training dataset in a similar way.
+We retrieve tweets on microblogs and try to get as many tweets as possible that contains idioms. 
+By stripping off idioms, we extracted context-dependent features from left words, and took the sentimental polarity of idioms as labels. 
+So we get our noisy labelled dataset and a context-dependent classifier is trained to model the context-dependent knowledge.
+
+\subsection{Combination of Two Classifiers}
+\label{combination}
+
+Although theoretically the general classifier and context classifier could be able to model different sentiment knowledge separately and classify the sentiment of a tweet accurately to some extent, the coverage and efficiency of them are limited by the quality and quantity of training datasets. 
+Besides, it is obvious that the paraphrase of idiom and tweet segments (lefts by stripping off idioms) is usually very short, so the feature vectors of datasets must be very sparse, which degrades the performance of the classifiers. 
+For above reasons, a consistent bootstrapping machine learning framework is chosen to combine the two classifiers together. 
+The framework is illustrated in Figure~\ref{fig1}. 
+\begin{figure*}[!t] 
+\centering%
+\includegraphics[width=6.0in,height=2.8in]{itse13p.pdf}
+\caption{The Bootstrapping Sentiment classification Framework}
+\label{fig1}
+\end{figure*}
+As illustrated in the framework, in an iterating manner, the general classifier $ P_{g} $ and context classifier $ P_{c} $ are applied to test dataset so that the every test instance $ x_{i} $ is predicted labels $ c_{i}=\lbrace c_{g},c_{c}\rbrace $ initially, with confidence $ p_{i}= \lbrace p_{g},p_{c}\rbrace$. 
+Then a combined confidence score is calculated with Equation~\ref{e3}:
+\begin{equation}
+\label{e3}
+p_{i}=\left\{
+\begin{array}{rcl}
+\lambda\ast p_{g} + \left( 1-\lambda \right) \ast p_{c} \qquad \mbox{if} \quad c_{g}=c_{c};\\
+0 \qquad \mbox{if} \quad c_{g} \neq c_{c};
+\end{array}
+\right. \enspace .
+\end{equation}
+where $ \lambda $ is the coefficient to control impacting weights of different part of features. 
+We initialize $ \lambda = 0.5 $ with equal weights of general part and context part of features, and to make combined classifier more adaptable for microblogs, we  increase the weight of context part step by step with the bootstrapping iteration progressing.
+The test dataset initially labelled as $ c_{i} \left( c_{i} \in \lbrace 1, -1\rbrace \right)$ was sorted with descending confidence $ p_{i} \left( p_{i} \neq 0 \right) $ for two sentimental categories $ C=\lbrace 1,-1\rbrace $ separately.
+The $ n $  positive and negative instances with top high confidence are selected as new instances to add into the training dataset and improve the context classifier to a more context-aware classifier. 
+Such a procedure iterates until convergence.
+The output of such semi-supervised sentiment classification framework is the predicted results of test dataset. 
+Above all, the whole framework can combine the two classifiers which constructed on divided feature space into a stronger classifier. 
+
+\subsection{Classifier Description}
+\label{classifier}
+
+We adopt the same methods as Pang et al.~\cite{xsongx:b4}, in that they have applied Na\"\i ve Bayes, Maximum Entropy and Support Vector Machine classifiers to identify the effectiveness of machine learning techniques on sentiment classification, and they got satisfying result (accuracy of 82.9\%).
+\subsubsection{Na\"\i ve Bayes Classifier.}
+\label{bayes}
+Naïve Bayesian classifier is the most popular text classification techniques.
+For sentiment classification problem as formulated in Section~\ref{formulation}, to determine which sentimental category $ c_{j} $ a document $ d_{i} $ belongs to, it is needed to compute the posterior probability $ P \left(c_{j} \mid d_{i} \right)$. 
+According to the Bayesian probability and the multinomial model, based on the hypothesis that the probabilities of features $ w_{d_{i},k} $ are independent given document class, Equation~\ref{e4} is got:
+\begin{equation}
+\label{e4}
+P \left(c_{j} \mid d_{i} \right) = \frac{P \left( c_{j} \right)\prod_{k=1}^{| d_{i} |} P \left( w_{d_{i},k} \mid c_{j} \right)}{\sum_{r=1}^{|C|}P \left( c_{r} \right)\prod_{k=1}^{| d_{i} |} P \left( w_{d_{i},k} \mid c_{r} \right)} \enspace .
+\end{equation}
+The class with the highest probability is assigned as the sentimental category of the document $ d_{i} $. 
+\subsubsection{Maximum Entropy Classifier.}
+\label{entropy}
+The Maximum Entropy classifier assigns the class with the higher conditional probability to the sentimental category of document $ d_{i} $ as follows:
+\begin{equation}
+\label{e5}
+P \left( c_{j} \mid d_{i}, \overrightarrow{\theta} \right) = \frac{1}{Z}exp \left( \overrightarrow{\theta}, \overrightarrow{f} \left( d_{i},c_{j} \right) \right) \enspace .
+\end{equation}
+where $ \overrightarrow{\theta} $ denotes the vector of feature weights, $ \overrightarrow{f} \left( d_{i}, c_{j} \right)$ denotes feature function that maps pair $ \left( d_{i}, c_{j} \right) $ to a feature vector, and $ Z $ denotes normalization factor.
+With labelled dataset $ D $, the training procedure is trying to solve such an optimization problem as:
+\begin{equation}
+\label{e6}
+\overrightarrow{\theta^{\ast}}=argmax_{\overrightarrow{\theta}}\prod_{i=1}^{|D|} P \left( c_{j} \mid d_{i}, \overrightarrow{\theta} \right) \enspace .
+\end{equation} 
+\subsubsection{Support Vector Machine Classifier.}
+\label{svm}
+Support Vector Machines classifier (SVM), is a kind of discriminative method of machine learning techniques.
+SVM tries to find a decision surface to separate the training data into two classes and makes decisions based on support vectors. 
+In this research, linear SVM has been adopted due to its popularity and sound performance in sentiment classification task.
+The training of SVM is trying to minimize an constraint optimization problem:
+\begin{equation}
+\label{e7}
+\begin{aligned}
+\overrightarrow{\alpha^{\ast}}=argmin \left( -\sum_{i=1}^{n}\alpha_{i} + \sum_{i=1}^{n} \sum_{j=1}^{n}\alpha_{i}\alpha{j} x_{i}x_{j}<\overrightarrow{x_{i}},\overrightarrow{x_{j}}> \right)\\
+\mbox{Subject to:} \sum_{i=1}^{n}\alpha_{i}y_{i}=0 , 0\leqslant \alpha_{i} \leqslant 1
+\end{aligned} \enspace .
+\end{equation}
+
+\section{Experiment}
+\label{experiment}
+
+In this section, the proposed semi-supervised sentiment classification framework is verified in an empirical test. 
+The test has been carried out with Chinese dataset constructed from an off-the-shelf on-line idiom dictionary and microblog platform Tencent\footnote{\url{http://t.qq.com/}}. 
+
+\subsection{Experiment Description}
+\label{description}
+
+\paragraph{Dataset}
+We crawled the on-line idiom dictionary from China Education Network\footnote{\url{http://chengyu.teachercn.com}} and got an idiom dataset of 8,160 instances labelled with positive (3,648 instances) and negative (4,512 instances) sentiment, which was used to train the general classifier. 
+From Apr.15th,2013 to May 1st,2013, we monitored Tencent time-line tweet streams, retrieved and extracted the tweets that contained at least one idiom in our idiom dataset, resulting in about 120,346 tweets. 
+After stripping off idioms from all tweets and removing tweets with characters less than 4, we got a dataset of 91,268 instances which was used to train context classifier. 
+The dataset from the First Chinese tweet Sentiment Analysis and Semantic Relationship Extraction Evaluation of CCF Natural Language Processing and Chinese Computing\footnote{\url{http://tcci.ccf.org.cn/conference/2012/pages/page04_eva.html}} was used to evaluate performance of our framework. 
+\paragraph{Classifiers and performance measurement}
+There are various complicated measurements to evaluate the performance of computational algorithm, of which the simplest accuracy index was chosen to evaluate the performance of our framework, because the comparison between measurements was not the important points of our research. 
+As for classifiers, Na\"\i ve Bayes classifier and Maximum Entropy classifier of NLTK (Natural Language ToolKits) \cite{xsongx:b27} package and Support Vector Machine classifier of Libsvm \cite{xsongx:b28} package were used for classification. 
+All the parameters and settings were optimized by cross-validation.
+\paragraph{Baseline and upper bound}
+Two baselines were used to compare with the proposed framework, the first one was na\"\i ve $ 50\% $ baseline since the test dataset was balanced with respect to the sentiment classes, the other one was the traditional lexicon-based classifier by comparing the number of positive words and negative words in HowNet sentiment lexicon for a tweet to determine its sentiment class.
+As mentioned in Section~\ref{related}, supervised machine learning methods are often used as upper bound to be compared by other methods. 
+In the experiments, an upper bound was also set up with test dataset in the five-folded cross-validation manner.
+\paragraph{Preprocessing}
+Text written in Chinese are not well formatted in that words in a sentence are not separated by space as English. 
+All the text in Chinese must be segmented before bag-of-words features being extracted. 
+In the experiment, all text of training and testing dataset were segmented with Chinese segmentation software ICTCLAS\footnote{\url{http://ictclas.nlpir.org/}}.
+
+\subsection{Result and Analysis}
+\label{result}
+To determine the values of $ \lambda $ in Equation~\ref{e3}, we carried out traversal experiment by varying the value of $ \lambda $ from $ 0 $ to $ 1 $ with step of $ 0.1 $. The result is illustrated in Figure~\ref{fig2}.
+\begin{figure}[!t]
+\centering
+\includegraphics[width=3.5in,height=2.0in]{lambda.pdf}
+\caption{The Impact of $ \lambda $ on Different Classifiers: NB denotes Na\"\i ve Bayes, MX denotes Maximum Entropy and SVM denotes Support Vector Machine.}
+\label{fig2}
+\end{figure}
+The values of $ \lambda $ for each combined bootstrapping classifier based on three different classifiers are fixed as the accuracy reaches its peak, which are: $ 0.4 $ for Na\"\i ve Bayes classifier, $ 0.5 $ for Maximum Entropy classifier, and $ 0.3 $ for Support Vector Machine classifier.
+
+The final sentiment classification results are shown in Table~\ref{t1}. 
+\begin{table}[!t]
+\caption{Results for Different Classifiers}
+\label{t1}
+\centering
+\begin{tabular}{|l||l|l|l|}
+\hline
+%\noalign{\bigskip}
+\bfseries Classifier &  \bfseries NB    &   \bfseries MX    &   \bfseries SVM    \\
+%   & Lexicon  & Supervised & General & Context &  Combined \\
+%\noalign{\bigskip}
+\hline
+%\noalign{\bigskip}
+\bfseries Lexicon Classifier & 0.725 & 0.725 & 0.725 \\
+\hline
+\bfseries Supervised Classifier & 0.785 & \textbf{0.806} & 0.826 \\
+\hline
+\bfseries General Classifier & 0.734 &  0.740 & 0.762 \\
+\hline
+\bfseries Context Classifier & 0.766 & 0.785 & 0.805 \\
+\hline
+\bfseries Combined Classifier & \textbf{0.802} & 0.802 & \textbf{0.843} \\
+% NB & 0.725 & 0.785 & 0.714 & 0.766 & \textbf{0.802}   \\
+% MX & 0.725 & \textbf{0.806} & 0.740 & 0.785 & 0.802  \\
+% SVM & 0.725 & 0.826 & 0.722 & 0.805 & \textbf{0.843} \\
+%\noalign{\bigskip}
+\hline
+\end{tabular}
+\end{table}
+
+Firstly, the accuracies of general classifier and context classifier all surpass the na\"\i ve baseline (50\%), which proves that they are superior to random selection and may be better choice when there are no labelled dataset available for supervised or semi-supervised machine-learning sentiment classification.
+
+Secondly, the accuracy of general classifier is a little higher than the traditional lexicon-based classifier, in that although they can both model the general sentiment knowledge, the general classifier is trained on context-independent part of features, so it can better catch the holistic sentimental polarity of tweets, while the sentiment lexicon often contains ambiguous entries. 
+As for the context classifier, the performance outperforms the traditional lexicon-based classifier and general classifier, because it has been trained on context-aware part of features, and the users are more willing to express their sentiment with ``Mars Language'' of microblogs, so the context classifier is more adaptable for microblog context.
+
+Finally, the combined classifier shows the best performance by combining general classifier and context classifier. 
+It even outperforms the upper bound supervised classifier, which proves the effectiveness our proposed framework because it can not only catch the holistic sentimental polarity of tweets by modelling general sentiment knowledge but also adapt to the microblog language context by considering the subtle sentiment expressions articulated in tweets.
+
+\section{Conclusion}
+\label{conclusion}
+
+Context-dependent problem has always been a main challenge of sentiment classification.
+In this paper, we have proposed a novel semi-supervised framework to get it solved in the microblog language context. 
+From a different perspective of feature space, we put forward the assumption that feature space can be divided into the general part and the context part.
+To make use of two parts of features, two classifiers are trained on dataset constructed from idiom resources and tweets separately. 
+Our framework combines the classifiers with a semi-supervised bootstrapping learning algorithm. 
+The experiment results show that the proposed framework could outperform the state-of-art supervised classifier. 
+In future, we will try to improve the sentiment classification performance by enlarging the context-independent resources and extracting richer features besides bag-of-words feature.
+
+\bibliographystyle{IEEEtran}
+
+\bibliography{IEEEabrv,IDEAL}
+
+\end{document}
+
+
+%\section{Introduction}
+%% no \IEEEPARstart
+%This demo file is intended to serve as a ``starter file''
+%for IEEE conference papers produced under \LaTeX\ using
+%IEEEtran.cls version 1.7 and later.
+%% You must have at least 2 lines in the paragraph with the drop letter
+%% (should never be an issue)
+%I wish you the best of success.
+%
+%\hfill mds
+% 
+%\hfill January 11, 2007
+%
+%\subsection{Subsection Heading Here}
+%Subsection text here.
+%
+%
+%\subsubsection{Subsubsection Heading Here}
+%Subsubsection text here.
+
+
+% An example of a floating figure using the graphicx package.
+% Note that \label must occur AFTER (or within) \caption.
+% For figures, \caption should occur after the \includegraphics.
+% Note that IEEEtran v1.7 and later has special internal code that
+% is designed to preserve the operation of \label within \caption
+% even when the captionsoff option is in effect. However, because
+% of issues like this, it may be the safest practice to put all your
+% \label just after \caption rather than within \caption{}.
+%
+% Reminder: the "draftcls" or "draftclsnofoot", not "draft", class
+% option should be used if it is desired that the figures are to be
+% displayed while in draft mode.
+%
+%\begin{figure}[!t]
+%\centering
+%\includegraphics[width=2.5in]{myfigure}
+% where an .eps filename suffix will be assumed under latex, 
+% and a .pdf suffix will be assumed for pdflatex; or what has been declared
+% via \DeclareGraphicsExtensions.
+%\caption{Simulation Results}
+%\label{fig_sim}
+%\end{figure}
+
+% Note that IEEE typically puts floats only at the top, even when this
+% results in a large percentage of a column being occupied by floats.
+
+
+% An example of a double column floating figure using two subfigures.
+% (The subfig.sty package must be loaded for this to work.)
+% The subfigure \label commands are set within each subfloat command, the
+% \label for the overall figure must come after \caption.
+% \hfil must be used as a separator to get equal spacing.
+% The subfigure.sty package works much the same way, except \subfigure is
+% used instead of \subfloat.
+%
+%\begin{figure*}[!t]
+%\centerline{\subfloat[Case I]\includegraphics[width=2.5in]{subfigcase1}%
+%\label{fig_first_case}}
+%\hfil
+%\subfloat[Case II]{\includegraphics[width=2.5in]{subfigcase2}%
+%\label{fig_second_case}}}
+%\caption{Simulation results}
+%\label{fig_sim}
+%\end{figure*}
+%
+% Note that often IEEE papers with subfigures do not employ subfigure
+% captions (using the optional argument to \subfloat), but instead will
+% reference/describe all of them (a), (b), etc., within the main caption.
+
+
+% An example of a floating table. Note that, for IEEE style tables, the 
+% \caption command should come BEFORE the table. Table text will default to
+% \footnotesize as IEEE normally uses this smaller font for tables.
+% The \label must come after \caption as always.
+%
+%\begin{table}[!t]
+%% increase table row spacing, adjust to taste
+%\renewcommand{\arraystretch}{1.3}
+% if using array.sty, it might be a good idea to tweak the value of
+% \extrarowheight as needed to properly center the text within the cells
+%\caption{An Example of a Table}
+%\label{table_example}
+%\centering
+%% Some packages, such as MDW tools, offer better commands for making tables
+%% than the plain LaTeX2e tabular which is used here.
+%\begin{tabular}{|c||c|}
+%\hline
+%One & Two\\
+%\hline
+%Three & Four\\
+%\hline
+%\end{tabular}
+%\end{table}
+
+
+% Note that IEEE does not put floats in the very first column - or typically
+% anywhere on the first page for that matter. Also, in-text middle ("here")
+% positioning is not used. Most IEEE journals/conferences use top floats
+% exclusively. Note that, LaTeX2e, unlike IEEE journals/conferences, places
+% footnotes above bottom floats. This can be corrected via the \fnbelowfloat
+% command of the stfloats package.
+
+
+
+%\section{Conclusion}
+%The conclusion goes here.
+
+
+
+
+% conference papers do not normally have an appendix
+
+
+% use section* for acknowledgement
+%\section*{Acknowledgment}
+%
+%
+%The authors would like to thank...
+
+
+
+
+
+% trigger a \newpage just before the given reference
+% number - used to balance the columns on the last page
+% adjust value as needed - may need to be readjusted if
+% the document is modified later
+%\IEEEtriggeratref{8}
+% The "triggered" command can be changed if desired:
+%\IEEEtriggercmd{\enlargethispage{-5in}}
+
+% references section
+
+% can use a bibliography generated by BibTeX as a .bbl file
+% BibTeX documentation can be easily obtained at:
+% http://www.ctan.org/tex-archive/biblio/bibtex/contrib/doc/
+% The IEEEtran BibTeX style support page is at:
+% http://www.michaelshell.org/tex/ieeetran/bibtex/
+%\bibliographystyle{IEEEtran}
+% argument is your BibTeX string definitions and bibliography database(s)
+%\bibliography{IEEEabrv,../bib/paper}
+%
+% <OR> manually copy in the resultant .bbl file
+% set second argument of \begin to the number of references
+%% (used to reserve space for the reference number labels box)
+%\begin{thebibliography}{1}
+%
+%\bibitem{IEEEhowto:kopka}
+%H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
+%  0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
+%
+%\end{thebibliography}
+
+
+
+
+% that's all folks
+%\end{document}
+
+
